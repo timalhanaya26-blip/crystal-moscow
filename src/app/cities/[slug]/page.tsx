@@ -142,10 +142,14 @@ function HeritagSection({
     <section
       id={id}
       className={`relative py-12 ${border ? "border-t border-slate-100" : ""}`}
-      style={{ backgroundImage: `url(${bg})`, backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center" }}
     >
-      {/* White overlay so cards stay readable */}
-      <div className="absolute inset-0 bg-white/92" />
+      {/* Heritage background */}
+      <div
+        className="absolute inset-0"
+        style={{ backgroundImage: `url(${bg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      />
+      {/* Semi-transparent overlay */}
+      <div className="absolute inset-0 bg-white/60" />
       <div className="container-app relative z-10">{children}</div>
     </section>
   );

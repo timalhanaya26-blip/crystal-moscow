@@ -172,8 +172,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "أحد أفخم فنادق موسكو وأكثرها شهرةً على شارع تفيرسكايا الرئيسي، يضم 266 غرفة و66 جناحاً فاخراً بإطلالات على المدينة. يقع خطوات من الكرملين والساحة الحمراء، ويوفّر خدمة استثنائية على مدار الساعة، ومطاعم عالمية، وسبا من الدرجة الأولى.",
     stars: 5, category: "vip", rating: 4.8, reviews: 1842,
-    mainImage: WIKI.ritzExt,
-    images: [WIKI.ritzExt, e(2), v(2), v(5), v(6), v(7)],
+    mainImage: lx(4),
+    images: [lx(4), e(2), v(2), v(5), v(6), v(7)],
     amenities: VIP_AMENITIES,
     featured: true,
     rooms: [
@@ -210,8 +210,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "أيقونة الفخامة في موسكو، يواجه ميدان مانيجنايا ويطل على حديقة ألكسندروفسكي مع الكرملين والمسرح البولشوي على بُعد خطوات. يضم مسبحاً داخلياً بانورامياً وسبا فاخراً ومطعم ستيك هاوس عالمي الشهرة، ونادياً تنفيذياً كاملاً.",
     stars: 5, category: "vip", rating: 4.9, reviews: 2150,
-    mainImage: WIKI.fourSeasonsExt,
-    images: [WIKI.fourSeasonsExt, e(4), v(4), v(0), v(2), v(6)],
+    mainImage: lx(5),
+    images: [lx(5), e(4), v(4), v(0), v(2), v(6)],
     amenities: VIP_AMENITIES,
     featured: true,
     rooms: [
@@ -248,8 +248,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "إرث تاريخي أصيل يعود إلى عام 1905 وأحد أكثر الفنادق روعةً في موسكو. يقع مباشرةً أمام المسرح البولشوي الشهير وعلى مقربة من الساحة الحمراء. تزدان قاعاته بالفسيفساء الفريدة ولوحات الفن التاريخي، ويضم مطعماً أسطورياً تحت سقف زجاجي، وسبا فاخراً ومسبحاً داخلياً.",
     stars: 5, category: "vip", rating: 4.9, reviews: 3100,
-    mainImage: WIKI.metropolExt,
-    images: [WIKI.metropolExt, WIKI.metropolFacade, WIKI.metropolInt, v(5), v(2), v(4)],
+    mainImage: lx(6),
+    images: [lx(6), lx(10), lx(11), v(5), v(2), v(4)],
     amenities: VIP_AMENITIES,
     featured: true,
     rooms: [
@@ -286,8 +286,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "مزيج استثنائي من الفخامة الحديثة والإلهام الأرميني في موسكو التاريخية. يقع على بُعد 300 متر من المسرح البولشوي، ويتميز بمطعم بانوراما الشهير على السطح بإطلالة ساحرة على أبراج الكرملين، وسبا أرارات المتكامل، ونادٍ تنفيذي من الدرجة الأولى.",
     stars: 5, category: "vip", rating: 4.9, reviews: 2870,
-    mainImage: WIKI.araratInt,
-    images: [WIKI.araratInt, e(0), v(5), v(4), v(7), v(3)],
+    mainImage: lx(7),
+    images: [lx(7), e(0), v(5), v(4), v(7), v(3)],
     amenities: VIP_AMENITIES,
     featured: true,
     rooms: [
@@ -678,8 +678,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "منتجع راديسون بلو المميز يتربع على شاطئ البحر الأسود مباشرةً في وسط سوتشي. يضم 196 غرفة وجناحاً بإطلالات ساحرة على البحر وجبال القوقاز، وأربعة مسابح مدفأة مطلة على البحر، وسبا من الدرجة الأولى، ومطعم أسماك شهير يتيح الجمع بين الشمس والبحر والخدمة الفاخرة.",
     stars: 5, category: "luxury", rating: 4.6, reviews: 2100,
-    mainImage: WIKI.radissonSochiExt,
-    images: [WIKI.radissonSochiExt, WIKI.radissonSochiAlt, lx(5), lx(6), lx(9), lx(10)],
+    mainImage: lx(9),
+    images: [lx(9), lx(13), lx(14), lx(15), lx(10), lx(11)],
     amenities: ["واي فاي مجاني", "شاطئ خاص على البحر الأسود", "4 مسابح مدفأة", "سبا", "مطعم أسماك فاخر", "بار شاطئي", "رياضات مائية", "صالة رياضية", "موقف سيارات"],
     featured: true,
     rooms: [
@@ -701,8 +701,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "أيقونة الفخامة في سانت بطرسبرغ منذ عام 1875، يقع الفندق الأسطوري في القلب الثقافي للمدينة بجوار المسرح الميخائيلوفسكي وعلى خطوات من متحف الإرميتاج. يضم مطعم إيروبا الفاخر والبار الروسي الأصيل، وصالة الشاي الكلاسيكية ذات السقف الزجاجي. أجنحته تنبض بروح روسيا الإمبراطورية بلوحات وتحف فنية أصيلة.",
     stars: 5, category: "vip", rating: 4.9, reviews: 3200,
-    mainImage: WIKI.grandEuropeExt,
-    images: [WIKI.grandEuropeExt, WIKI.grandEuropeInt, v(0), v(1), v(3), v(5)],
+    mainImage: lx(8),
+    images: [lx(8), lx(12), v(0), v(1), v(3), v(5)],
     amenities: VIP_AMENITIES,
     featured: true,
     rooms: [
