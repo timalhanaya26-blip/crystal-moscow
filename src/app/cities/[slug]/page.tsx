@@ -11,21 +11,21 @@ const CITIES: Record<string, {
     ru: "Москва",
     desc: "العاصمة الروسية — تاريخ إمبراطوري، كرملين وساحة حمراء وأرقى الفنادق العالمية",
     color: "from-brand-800 to-brand-600",
-    heritage: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Moscow_Kremlin_%288281675670%29.jpg/1600px-Moscow_Kremlin_%288281675670%29.jpg",
+    heritage: "https://images.unsplash.com/photo-1513326738677-b964603b136d?w=1600&q=80",
   },
   sochi: {
     ar: "سوتشي",
     ru: "Сочи",
     desc: "لؤلؤة البحر الأسود — شمس دافئة، شواطئ ساحرة وجبال قوقاز خلابة على مدار العام",
     color: "from-sky-700 to-cyan-600",
-    heritage: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/View_on_Sotsji_from_black_sea.jpg/1600px-View_on_Sotsji_from_black_sea.jpg",
+    heritage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80",
   },
   spb: {
     ar: "سانت بطرسبرغ",
     ru: "Санкт-Петербург",
     desc: "مدينة الفنون والقصور — إرميتاج، نيفا، ليالٍ بيضاء وعمارة إمبراطورية لا مثيل لها",
     color: "from-violet-800 to-purple-600",
-    heritage: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Winter_Palace_Panorama_3.jpg/1600px-Winter_Palace_Panorama_3.jpg",
+    heritage: "https://images.unsplash.com/photo-1548714218-b49fbea80fc5?w=1600&q=80",
   },
 };
 
