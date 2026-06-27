@@ -2,7 +2,7 @@
 //  بيانات الفنادق الحقيقية
 //  موسكو (26) + سوتشي (3) + سانت بطرسبرغ (7) = 36 فندق
 //  الأسعار بالروبل الروسي (₽) للليلة الواحدة
-//  الصور: Unsplash CDN — مرخصة للاستخدام التجاري المجاني
+//  الصور: Unsplash CDN + Wikimedia Commons (CC-licensed)
 // ============================================================
 
 export type RoomSeed = {
@@ -33,7 +33,7 @@ export type HotelSeed = {
   rooms: RoomSeed[];
 };
 
-// ── Image pools ──────────────────────────────────────────────
+// ── Image pools (for gallery images) ─────────────────────────
 
 const EXT = [
   "https://plus.unsplash.com/premium_photo-1674651240687-92b4ad15d0ea?w=1200&q=80",
@@ -112,6 +112,9 @@ const WIKI = {
   // جراند هوتيل أوروبا سانت بطرسبرغ
   grandEuropeExt:   "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Hotel_europe.jpg/1200px-Hotel_europe.jpg",
   grandEuropeInt:   "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Evropeiskaya.jpeg/1200px-Evropeiskaya.jpeg",
+  // راديسون بلو ريزورت سوتشي
+  radissonSochiExt: "https://upload.wikimedia.org/wikipedia/commons/1/10/Radisson_Blu_hotel_in_Sochi%2C_Russia.jpg",
+  radissonSochiAlt: "https://upload.wikimedia.org/wikipedia/commons/e/eb/RadissonBluImeretinskaya.jpg",
 };
 
 // ── Amenity presets ──────────────────────────────────────────
@@ -188,8 +191,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "فندق كوسموس إيطاليان تحفة معمارية تجمع بين الفخامة الروسية والأناقة الإيطالية في موقع مميز بشارع نوفي أربات الحيوي. يتميز بتصميم داخلي فريد على أيدي مصممين إيطاليين، ومطعم إيطالي أصيل، وسبا متكامل.",
     stars: 5, category: "vip", rating: 4.7, reviews: 683,
-    mainImage: e(2),
-    images: [e(2), e(3), v(1), v(3), v(6), v(7)],
+    mainImage: e(1),
+    images: [e(1), e(3), v(1), v(3), v(6), v(7)],
     amenities: VIP_AMENITIES,
     featured: true,
     rooms: [
@@ -226,8 +229,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "فندق إنتركونتيننتال موسكو يقع في قلب المدينة على شارع تفيرسكايا الأنيق، ويوفّر تجربة إقامة VIP متكاملة تجمع بين خدمة الضيافة العالمية والأجواء الروسية الأصيلة. يضم نادياً تنفيذياً مخصصاً وخدمات أعمال متطورة وطيفاً واسعاً من المطاعم والترفيه.",
     stars: 5, category: "vip", rating: 4.7, reviews: 1320,
-    mainImage: e(4),
-    images: [e(4), e(5), v(3), v(1), v(5), v(7)],
+    mainImage: e(2),
+    images: [e(2), e(5), v(3), v(1), v(5), v(7)],
     amenities: VIP_AMENITIES,
     featured: true,
     rooms: [
@@ -264,8 +267,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "تجربة إقامة فريدة من نوعها في قلب موسكو التاريخية على شارع نيكولسكايا الذهبي، على خطوات من الساحة الحمراء. يجمع سانت ريجيس بين الموروث الأرستقراطي الروسي والفخامة المعاصرة. تمتاز غرفه وأجنحته بتشطيبات استثنائية وخدمة الخادم الشخصي وسبا سانت ريجيس الشهير.",
     stars: 5, category: "vip", rating: 4.9, reviews: 1680,
-    mainImage: e(6),
-    images: [e(6), e(7), v(7), v(3), v(1), v(5)],
+    mainImage: e(3),
+    images: [e(3), e(7), v(7), v(3), v(1), v(5)],
     amenities: VIP_AMENITIES,
     featured: true,
     rooms: [
@@ -306,8 +309,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "فندق بوتيك فاخر في موقع تاريخي على شارع تفيرسكايا بالقرب من الساحة الحمراء والكرملين. يضم واجهة تاريخية محمية تعود إلى القرن التاسع عشر تجمع بين العمارة الكلاسيكية وأرقى معايير الضيافة العصرية. يتميز بعدد محدود من الأجنحة الحصرية وخدمة شخصية متميزة.",
     stars: 5, category: "luxury", rating: 4.7, reviews: 890,
-    mainImage: e(8),
-    images: [e(8), e(9), lx(0), lx(1), lx(2), lx(3)],
+    mainImage: e(4),
+    images: [e(4), e(9), lx(0), lx(1), lx(2), lx(3)],
     amenities: LUX_AMENITIES,
     featured: true,
     rooms: [
@@ -325,8 +328,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "فندق كوسموس أربات الراقي يتربع في قلب الحي التاريخي والمالي في موسكو، مقابل مطعم براها الأسطوري وأقدم سينما في العالم. يضم 242 غرفة فسيحة ومطعماً بانورامياً على الطابق الثاني عشر يوفّر إطلالات خلابة على موسكو، وصالة أعمال متكاملة وبار في الردهة يعمل على مدار الساعة.",
     stars: 5, category: "luxury", rating: 4.5, reviews: 1240,
-    mainImage: e(9),
-    images: [e(9), e(10), lx(2), lx(3), lx(4), lx(5)],
+    mainImage: e(5),
+    images: [e(5), e(10), lx(2), lx(3), lx(4), lx(5)],
     amenities: LUX_AMENITIES,
     featured: true,
     rooms: [
@@ -344,8 +347,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "أكبر فندق في روسيا بـ 1,777 غرفة وأجنحة رائعة على الطراز السوفيتي الكلاسيكي المتجدد. يقع في المنطقة الخضراء شمال شرق موسكو قرب معرض VDNKh الشهير وحديقة ألوشا، وعلى بُعد 20 دقيقة بالسيارة من المركز. تجربة إقامة لا تُنسى بأسعار منافسة.",
     stars: 5, category: "luxury", rating: 4.4, reviews: 4200,
-    mainImage: e(10),
-    images: [e(10), e(11), lx(4), lx(5), lx(6), lx(7)],
+    mainImage: e(6),
+    images: [e(6), e(11), lx(4), lx(5), lx(6), lx(7)],
     amenities: LUX_AMENITIES,
     featured: true,
     rooms: [
@@ -363,8 +366,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "فندق ماينديس الراقي في قصر نيوكلاسيكي تاريخي بالقرب من ميدان كومسومولسكايا (محطات القطارات الثلاث). تجمع رحلتك اليومية بين أجواء القرن التاسع عشر الأرستقراطية والخدمات المعاصرة المتكاملة، مع سهولة الوصول لمختلف أرجاء موسكو عبر شبكة المترو.",
     stars: 5, category: "luxury", rating: 4.5, reviews: 760,
-    mainImage: e(11),
-    images: [e(11), e(12), lx(6), lx(7), lx(8), lx(9)],
+    mainImage: e(7),
+    images: [e(7), e(12), lx(6), lx(7), lx(8), lx(9)],
     amenities: LUX_AMENITIES,
     featured: true,
     rooms: [
@@ -382,8 +385,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "فندق ماريوت الكبير يقف شامخاً في قلب موسكو على الشارع الرئيسي الأنيق، ويوفّر معايير الضيافة العالمية التي يشتهر بها البراند. يضم مطعم ذا لوبي إيزباي بار، ومسبحاً وسبا متكاملاً، وصالات مؤتمرات حديثة ومرافق أعمال من الطراز الأول.",
     stars: 5, category: "luxury", rating: 4.7, reviews: 2840,
-    mainImage: e(12),
-    images: [e(12), e(13), lx(8), lx(9), lx(10), lx(11)],
+    mainImage: e(8),
+    images: [e(8), e(13), lx(8), lx(9), lx(10), lx(11)],
     amenities: LUX_AMENITIES,
     featured: true,
     rooms: [
@@ -401,8 +404,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "فندق موفنبيك الراقي ذو الطراز السويسري الأنيق في منطقة تاغانسكايا الحيوية بموسكو. يتميز بتصميم عصري ودافئ وإطلالات جميلة على المدينة، ومطبخ موفنبيك الشهير بجودته العالية، وسبا متكامل ومركز لياقة بدنية.",
     stars: 5, category: "luxury", rating: 4.6, reviews: 1580,
-    mainImage: e(13),
-    images: [e(13), e(14), lx(10), lx(11), lx(12), lx(13)],
+    mainImage: e(9),
+    images: [e(9), e(14), lx(10), lx(11), lx(12), lx(13)],
     amenities: LUX_AMENITIES,
     featured: true,
     rooms: [
@@ -420,8 +423,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "فندق ريناتيس الراقي وجهة متميزة للباحثين عن الهدوء والخصوصية في قلب موسكو. يتميز بتصميم داخلي أنيق جمع بين الكلاسيكية والحداثة، مع خدمة شخصية رفيعة المستوى وغرف فسيحة بلمسات فنية مميزة.",
     stars: 5, category: "luxury", rating: 4.5, reviews: 420,
-    mainImage: e(14),
-    images: [e(14), e(8), lx(12), lx(13), lx(14), lx(15)],
+    mainImage: e(10),
+    images: [e(10), e(8), lx(12), lx(13), lx(14), lx(15)],
     amenities: LUX_AMENITIES,
     featured: true,
     rooms: [
@@ -439,8 +442,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "فندق ستاندارت الأنيق يقدم تجربة إقامة عصرية مريحة في موسكو بمعايير 5 نجوم واضحة وخدمات متكاملة. يتميز بتصميم بسيط وعصري يعكس مفهوم الفندق القائم على الجودة الصادقة والأسعار المنطقية لمستوى الخدمة.",
     stars: 5, category: "luxury", rating: 4.6, reviews: 630,
-    mainImage: e(9),
-    images: [e(9), e(10), lx(14), lx(15), lx(16), lx(1)],
+    mainImage: e(11),
+    images: [e(11), e(10), lx(14), lx(15), lx(16), lx(1)],
     amenities: LUX_AMENITIES,
     featured: true,
     rooms: [
@@ -458,8 +461,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "نجوم أربات (المعروف سابقاً بماريوت نوفي أربات) فندق فاخر بموقع متميز في منطقة الأربات التاريخية قرب نهر موسكفا والمباني الحكومية والسفارات. يوفّر غرفاً أنيقة بإطلالة على شارع نوفي أربات، وشققاً مصممة بغرفة نوم وغرفتين مع مطابخ كاملة، وسبا مع حمام بخاري وحمام تركي.",
     stars: 5, category: "luxury", rating: 4.6, reviews: 1950,
-    mainImage: e(10),
-    images: [e(10), e(11), lx(16), lx(15), lx(7), lx(3)],
+    mainImage: e(12),
+    images: [e(12), e(11), lx(16), lx(15), lx(7), lx(3)],
     amenities: LUX_AMENITIES,
     featured: true,
     rooms: [
@@ -477,8 +480,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "فندق سويسوتيل كراسني خولمي يرتفع بأناقة سويسرية في منطقة زاموسكفوريتشي جنوب الكرملين. يتميز بإطلالات بانورامية رائعة على نهر موسكفا ومعالم المدينة التاريخية من أدواره العليا، ومطعمهم المشهور شيبور وسبا متكامل.",
     stars: 5, category: "luxury", rating: 4.7, reviews: 2100,
-    mainImage: e(11),
-    images: [e(11), e(12), lx(0), lx(16), lx(8), lx(9)],
+    mainImage: e(13),
+    images: [e(13), e(12), lx(0), lx(16), lx(8), lx(9)],
     amenities: LUX_AMENITIES,
     featured: true,
     rooms: [
@@ -496,8 +499,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "راديسون كولكشن فندق راقٍ يجمع بين الفخامة المعاصرة وتاريخ موسكو الثري على الشارع الملكي الشهير كوتوزوفسكي بروسبيكت. يضم مطعم الشيف الشهير على الطابق العلوي بإطلالة بانورامية فريدة، وسبا وصالة رياضية ونادٍ تنفيذي متكامل.",
     stars: 5, category: "luxury", rating: 4.8, reviews: 1730,
-    mainImage: e(12),
-    images: [e(12), e(13), lx(1), lx(2), lx(9), lx(10)],
+    mainImage: e(14),
+    images: [e(14), e(13), lx(1), lx(2), lx(9), lx(10)],
     amenities: LUX_AMENITIES,
     featured: true,
     rooms: [
@@ -519,8 +522,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "فندق آرت كورت الأنيق مساحة تجمع بين الفن والضيافة في قلب موسكو. يتميز بتصميم داخلي استوحى ملامحه من تراث موسكو الفني، وغرف مريحة بلمسات إبداعية، وموقع مثالي قريب من أبرز المتاحف والمعارض الفنية في المدينة.",
     stars: 4, category: "economy", rating: 4.3, reviews: 870,
-    mainImage: e(3),
-    images: [e(3), e(5), ec(0), ec(1), ec(2)],
+    mainImage: v(0),
+    images: [v(0), e(5), ec(0), ec(1), ec(2)],
     amenities: ECO_AMENITIES,
     featured: true,
     rooms: [
@@ -538,8 +541,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "إنترمارك ريزيدنس وجهة مثالية للإقامات الطويلة والعائلات، بـ133 شقة فاخرة مجهزة بالكامل في الحي الثقافي والتاريخي الراقي بأربات. توفّر كل شقة مطبخاً كاملاً ومناطق معيشة فسيحة بمعايير فندقية راقية، مما يجعلها أوفر بنسبة تصل إلى 50٪ مقارنة بالفنادق التقليدية.",
     stars: 4, category: "economy", rating: 4.3, reviews: 1120,
-    mainImage: e(6),
-    images: [e(6), e(7), ec(1), ec(2), ec(3)],
+    mainImage: v(1),
+    images: [v(1), e(7), ec(1), ec(2), ec(3)],
     amenities: APT_AMENITIES,
     featured: true,
     rooms: [
@@ -557,8 +560,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "فندق نوفوتيل موسكو من سلسلة أكور العالمية، يوفّر إقامة مريحة ومنظمة بمعايير دولية موحدة في قلب موسكو. يناسب المسافرين لأغراض العمل والسياحة على حدٍّ سواء، مع غرف عملية أنيقة وخدمات الأعمال المتكاملة والمطعم الفرنسي المميز.",
     stars: 4, category: "economy", rating: 4.3, reviews: 2650,
-    mainImage: e(8),
-    images: [e(8), e(9), ec(2), ec(3), ec(4)],
+    mainImage: v(2),
+    images: [v(2), e(9), ec(2), ec(3), ec(4)],
     amenities: ECO_AMENITIES,
     featured: true,
     rooms: [
@@ -576,8 +579,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "أداجيو موسكو من سلسلة أكور للشقق الفندقية، حل مثالي بين المرونة والراحة للمسافرين الذين يرغبون في استقلالية المنزل بجودة الفندق. تضم كل شقة مطبخاً مجهزاً بالكامل وصالة واسعة، وهي خيار اقتصادي مميز للعائلات والإقامات المطولة.",
     stars: 4, category: "economy", rating: 4.2, reviews: 1340,
-    mainImage: e(13),
-    images: [e(13), e(14), ec(3), ec(4), ec(0)],
+    mainImage: v(3),
+    images: [v(3), e(14), ec(3), ec(4), ec(0)],
     amenities: APT_AMENITIES,
     featured: true,
     rooms: [
@@ -595,8 +598,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "فندق إيبيس موسكو الخيار الأمثل للمسافر العملي الباحث عن نظافة مضمونة وراحة موثوقة بأسعار في المتناول. من سلسلة أكور العالمية، يقدم إيبيس معايير جودة صارمة وسرير نوم مريح في الأولوية، مع خدمة مطعم وبار طوال اليوم.",
     stars: 4, category: "economy", rating: 4.1, reviews: 3800,
-    mainImage: e(14),
-    images: [e(14), e(3), ec(4), ec(0), ec(1)],
+    mainImage: v(4),
+    images: [v(4), e(3), ec(4), ec(0), ec(1)],
     amenities: ["واي فاي مجاني", "مكتب استقبال 24 ساعة", "تكييف", "مطعم", "بار"],
     featured: true,
     rooms: [
@@ -614,8 +617,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "بينتا هوتيل تصميم فندقي مختلف يقدم مفهوم البنتالاونج الفريد الذي يدمج الاستقبال والبار والمطعم في فضاء اجتماعي واحد نابض بالحياة. يقع في شارع نوفي أربات الشهير بجانب متحف بوشكين وعلى مقربة من الساحة الحمراء، مع 228 غرفة بتصميم المفهوم المميز.",
     stars: 4, category: "economy", rating: 4.4, reviews: 1890,
-    mainImage: e(5),
-    images: [e(5), e(6), ec(0), ec(2), ec(4)],
+    mainImage: v(5),
+    images: [v(5), e(6), ec(0), ec(2), ec(4)],
     amenities: ["واي فاي مجاني", "بنتالاونج (بار + مطعم + استقبال)", "صالة رياضية", "تكييف", "مكتب استقبال 24 ساعة"],
     featured: true,
     rooms: [
@@ -637,8 +640,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "تحفة معمارية شاهقة بواجهة موجية فريدة، يتربع في قلب سوتشي على الساحل الدافئ للبحر الأسود. يضم 199 غرفة و29 جناحاً فاخراً، ومطعمين راقيين، ومسابح مدفأة على مدار العام، وسبا لا سلطانة الذي يضم 5 قاعات للعلاجات وجاكوزي وسونا وحمام تركي وبركة خاصة بإطلالة بحرية.",
     stars: 5, category: "luxury", rating: 4.6, reviews: 2380,
-    mainImage: e(13),
-    images: [e(13), e(14), lx(3), lx(4), lx(10), lx(11)],
+    mainImage: v(6),
+    images: [v(6), e(14), lx(3), lx(4), lx(10), lx(11)],
     amenities: ["واي فاي مجاني", "شاطئ البحر الأسود", "مسبح مدفأ على مدار العام", "سبا لا سلطانة", "مطعمان فاخران", "صالة رياضية", "خدمة الغرف", "نادٍ للأطفال", "موقف سيارات"],
     featured: true,
     rooms: [
@@ -656,13 +659,13 @@ export const HOTELS: HotelSeed[] = [
     description:
       "فندق ماريوت في كراسنايا بوليانا يقع في قلب منتجع روزا خوتور الجبلي الشهير، مكان تنظيم الألعاب الأولمبية الشتوية سوتشي 2014. يضم 201 غرفة وجناحاً بإطلالات خلابة على قمم جبال القوقاز المكسوة بالثلج صيفاً وشتاءً، مع سبا راقٍ ومسبح مدفأ وإمكانية التزلج على المنحدرات.",
     stars: 5, category: "vip", rating: 4.8, reviews: 1650,
-    mainImage: e(4),
-    images: [e(4), e(5), v(2), v(3), v(6), v(7)],
+    mainImage: v(7),
+    images: [v(7), e(4), v(2), v(3), v(6), lx(0)],
     amenities: [...VIP_AMENITIES, "تزلج على الجليد", "شاطئ جبلي في الصيف"],
     featured: true,
     rooms: [
       { name: "غرفة ديلوكس بإطلالة الجبال", price: 22000, area: 40, capacity: 2, beds: "سرير كينج", images: [v(2), v(3), v(6)] },
-      { name: "جناح منتجع كراسنايا", price: 58000, area: 90, capacity: 4, beds: "غرفتا نوم + صالون", images: [v(4), v(5), v(7)] },
+      { name: "جناح منتجع كراسنايا", price: 58000, area: 90, capacity: 4, beds: "غرفتا نوم + صالون", images: [v(4), v(5), lx(1)] },
     ],
   },
 
@@ -675,8 +678,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "منتجع راديسون بلو المميز يتربع على شاطئ البحر الأسود مباشرةً في وسط سوتشي. يضم 196 غرفة وجناحاً بإطلالات ساحرة على البحر وجبال القوقاز، وأربعة مسابح مدفأة مطلة على البحر، وسبا من الدرجة الأولى، ومطعم أسماك شهير يتيح الجمع بين الشمس والبحر والخدمة الفاخرة.",
     stars: 5, category: "luxury", rating: 4.6, reviews: 2100,
-    mainImage: e(6),
-    images: [e(6), e(7), lx(5), lx(6), lx(9), lx(10)],
+    mainImage: WIKI.radissonSochiExt,
+    images: [WIKI.radissonSochiExt, WIKI.radissonSochiAlt, lx(5), lx(6), lx(9), lx(10)],
     amenities: ["واي فاي مجاني", "شاطئ خاص على البحر الأسود", "4 مسابح مدفأة", "سبا", "مطعم أسماك فاخر", "بار شاطئي", "رياضات مائية", "صالة رياضية", "موقف سيارات"],
     featured: true,
     rooms: [
@@ -717,8 +720,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "قصر الأسد التاريخي من القرن التاسع عشر أُعيد تأهيله ليصبح أحد أرقى فنادق روسيا. يواجه كاتدرائية القديس إسحاق الذهبية الشاهقة وعلى بُعد خطوات من نهر النيفا وقصر الشتاء ومتحف الإرميتاج. يضم 175 غرفة وجناحاً استثنائياً، ومسبحاً داخلياً بانورامياً، وسبا فور سيزونز المتكامل.",
     stars: 5, category: "vip", rating: 4.9, reviews: 2100,
-    mainImage: e(3),
-    images: [e(3), e(1), v(4), v(2), v(6), v(0)],
+    mainImage: lx(0),
+    images: [lx(0), e(1), v(4), v(2), v(6), v(0)],
     amenities: VIP_AMENITIES,
     featured: true,
     rooms: [
@@ -736,8 +739,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "فندق كيمبينسكي يرتفع بأناقة أوروبية راقية على ضفاف نهر مويكا الساحر، على مقربة من بيت بوشكين الشاعر وكاتدرائية القديس إسحاق ومتحف الإرميتاج. يضم 195 غرفة وجناحاً بتصميم معاصر فاخر، ومطعم بيلاروسيان الشهير ذي الطابع الروسي الأصيل، وسبا كيمبينسكي المتكامل مع مسبح داخلي.",
     stars: 5, category: "vip", rating: 4.8, reviews: 1850,
-    mainImage: e(7),
-    images: [e(7), e(4), v(3), v(5), v(1), v(7)],
+    mainImage: lx(1),
+    images: [lx(1), e(4), v(3), v(5), v(1), v(7)],
     amenities: VIP_AMENITIES,
     featured: true,
     rooms: [
@@ -755,8 +758,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "فندق كورنثيا الفاخر يمتد على شارع نيفسكي الشهير، ويضم 388 غرفة وجناحاً تجمع بين الطراز الكلاسيكي وأرقى الخدمات العصرية. موقعه المميز يتيح التنقل بسهولة لزيارة متحف الإرميتاج وكاتدرائية القديس إسحاق والكنيسة الملونة ذات القباب.",
     stars: 5, category: "luxury", rating: 4.7, reviews: 2900,
-    mainImage: e(9),
-    images: [e(9), e(8), lx(1), lx(3), lx(5), lx(8)],
+    mainImage: lx(2),
+    images: [lx(2), e(8), lx(1), lx(3), lx(5), lx(8)],
     amenities: LUX_AMENITIES,
     featured: true,
     rooms: [
@@ -774,8 +777,8 @@ export const HOTELS: HotelSeed[] = [
     description:
       "أول فندق W في روسيا يجمع بين الجرأة المعاصرة وسحر سانت بطرسبرغ الكلاسيكية. يضم مطعم WAVE الإبداعي، وبار WET المذهل الذي يطل على المسبح الداخلي، وغرف وأجنحة بتصاميم مستوحاة من الفن الروسي وحركة الباوهاوس. الأقرب إلى ميدان القديس إسحاق وعلى مسافة قصيرة من متحف الإرميتاج.",
     stars: 5, category: "luxury", rating: 4.6, reviews: 1680,
-    mainImage: e(12),
-    images: [e(12), e(11), lx(6), lx(7), lx(11), lx(13)],
+    mainImage: lx(3),
+    images: [lx(3), e(11), lx(6), lx(7), lx(11), lx(13)],
     amenities: LUX_AMENITIES,
     featured: true,
     rooms: [
@@ -793,12 +796,12 @@ export const HOTELS: HotelSeed[] = [
     description:
       "فندق إيبيس الخيار الأمثل للمسافر العملي في مدينة الفنون الروسية. يقع في منطقة سيمينوفسكايا الهادئة بالقرب من وسط المدينة، وعلى بُعد 15 دقيقة مشياً من أهم المعالم السياحية كمتحف الإرميتاج وكاتدرائية القديس إسحاق. نظافة مضمونة وراحة موثوقة بسعر منافس.",
     stars: 3, category: "economy", rating: 4.2, reviews: 5100,
-    mainImage: e(14),
-    images: [e(14), e(5), ec(0), ec(2), ec(4)],
+    mainImage: ec(0),
+    images: [ec(0), e(5), ec(2), ec(3), ec(4)],
     amenities: ["واي فاي مجاني", "مكتب استقبال 24 ساعة", "تكييف", "مطعم", "بار"],
     featured: true,
     rooms: [
-      { name: "غرفة مفردة إيبيس", price: 4200, area: 16, capacity: 1, beds: "سرير مفرد", images: [ec(0), ec(2)] },
+      { name: "غرفة مفردة إيبيس", price: 4200, area: 16, capacity: 1, beds: "سرير مفرد", images: [ec(2), ec(3)] },
       { name: "غرفة مزدوجة", price: 6800, area: 22, capacity: 2, beds: "سريران مفردان", images: [ec(4), ec(1)] },
     ],
   },
@@ -812,12 +815,12 @@ export const HOTELS: HotelSeed[] = [
     description:
       "فندق بارك إن بريبالتيسكايا الضخم على جزيرة فاسيليفسكي مع إطلالات رائعة على خليج فنلندا وأفق سانت بطرسبرغ خلال الليالي البيضاء الأسطورية في الصيف. أحد أكبر الفنادق في المدينة بأكثر من 1200 غرفة، وإمكانية الوصول للمركز عبر شبكة المترو بـ 15 دقيقة.",
     stars: 4, category: "economy", rating: 4.1, reviews: 3800,
-    mainImage: e(2),
-    images: [e(2), e(10), ec(1), ec(3), ec(4)],
+    mainImage: ec(1),
+    images: [ec(1), e(10), ec(2), ec(3), ec(4)],
     amenities: ECO_AMENITIES,
     featured: true,
     rooms: [
-      { name: "غرفة قياسية", price: 5800, area: 22, capacity: 2, beds: "سرير مزدوج", images: [ec(1), ec(3)] },
+      { name: "غرفة قياسية", price: 5800, area: 22, capacity: 2, beds: "سرير مزدوج", images: [ec(2), ec(3)] },
       { name: "غرفة بإطلالة خليج فنلندا", price: 9500, area: 28, capacity: 2, beds: "سرير كينج", images: [ec(4), ec(0)] },
     ],
   },
