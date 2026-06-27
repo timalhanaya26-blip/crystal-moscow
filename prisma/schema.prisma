@@ -1,0 +1,71 @@
+// مخطط قاعدة البيانات لموقع حجز الفنادق
+// قاعدة البيانات: SQLite (سهلة محلياً، يمكن ترقيتها إلى PostgreSQL لاحقاً)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// الفندق
+model Hotel {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique // معرّف فريد للرابط
+  name        String // اسم الفندق بالعربية
+  nameRu      String   @default("") // اسم الفندق بالروسية
+  city        String // المدينة
+  address     String // العنوان الكامل
+  description String // وصف الفندق
+  stars       Int // عدد النجوم (1-5)
+  category    String // التصنيف: "luxury" فاخر أو "economy" اقتصادي
+  rating      Float    @default(0) // تقييم الزوار (من 5)
+  reviews     Int      @default(0) // عدد التقييمات
+  mainImage   String // الصورة الرئيسية
+  images      String   @default("[]") // ألبوم الصور (JSON array من الروابط)
+  amenities   String   @default("[]") // المرافق (JSON array، مثل: واي فاي، مسبح)
+  whatsapp    String? // رقم واتساب للتواصل
+  featured    Boolean  @default(false) // عرض في الصفحة الرئيسية
+  rooms       Room[]
+  bookings    Booking[]
+  createdAt   DateTime @default(now())
+
+  @@index([city])
+  @@index([category])
+}
+
+// الغرفة داخل الفندق
+model Room {
+  id        Int       @id @default(autoincrement())
+  hotelId   Int
+  hotel     Hotel     @relation(fields: [hotelId], references: [id], onDelete: Cascade)
+  name      String // نوع الغرفة (مثل: غرفة مزدوجة، جناح)
+  price     Float // سعر الليلة
+  area      Float // المساحة بالمتر المربع
+  capacity  Int       @default(2) // عدد الأشخاص
+  beds      String    @default("") // وصف الأسرّة
+  images    String    @default("[]") // صور الغرفة (JSON array)
+  bookings  Booking[]
+}
+
+// الحجز
+model Booking {
+  id        Int      @id @default(autoincrement())
+  hotelId   Int
+  hotel     Hotel    @relation(fields: [hotelId], references: [id])
+  roomId    Int?
+  room      Room?    @relation(fields: [roomId], references: [id])
+  fullName  String // اسم العميل
+  email     String // البريد الإلكتروني
+  phone     String // رقم الجوال
+  checkIn   DateTime // تاريخ الوصول
+  checkOut  DateTime // تاريخ المغادرة
+  guests    Int      @default(1) // عدد الضيوف
+  notes     String? // ملاحظات إضافية
+  status    String   @default("pending") // الحالة: pending / confirmed / cancelled
+  createdAt DateTime @default(now())
+
+  @@index([status])
+}
